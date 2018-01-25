@@ -1,35 +1,58 @@
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    font-family:;
+    font-size: 14px;
+    background: transparent;
+    color:;
+    text-align: center;
+    /*margin: auto;*/
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+a {
+    color:;
+    background-color: transparent;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    a:link,
+    a:visited,
+    a:active,
+    a:hover a:focus {
+        color:;
     }
+
+    a:hover .carousel-control {
+        background: lightpink;
+    }
+
+img {
+    padding: 20px;
+}
+
+.carousel-control {
+    background-color: transparent;
+}
+
+/* 
+    ************************************************************************
+    HOW TO: ADJUST YOUR CSS WHEN THE USER'S VIEWPORT GETS LARGER
+
+    You may combine anything to the right of "@media screen"    
+    For example: 
+    @media screen and (min-width: 1024px) and (orientation: landscape)
+    ************************************************************************
+*/
+
+/* FOR LARGER HEIGHT */
+@media screen and (min-height: ___px) {
+}
+
+/* FOR LARGER WIDTH */
+@media screen and (min-width: ___px) {
+}
+
+/* FOR PORTRAIT ONLY */
+@media screen and (orientation: portrait) {
+}
+
+/* FOR LANDSCAPE ONLY */
+@media screen and (orientation: landscape) {
 }
