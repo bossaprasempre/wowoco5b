@@ -1,7 +1,6 @@
 body {
     font-family:;
     font-size: 14px;
-    background: transparent;
     color:;
     text-align: center;
     /*margin: auto;*/
@@ -19,17 +18,34 @@ a {
         color:;
     }
 
-    a:hover .carousel-control {
-        background: lightpink;
+    a:hover {
+        background:;
     }
 
 img {
-    padding: 20px;
+    padding: 1em;
 }
 
-.carousel-control {
-    background-color: transparent;
+h1 {
+    padding: 1em;
 }
+
+/* TO GET RID OFF THE SIDE CONTROL BACKGROUND (GRADIENT)*/
+.right.carousel-control {
+    background-image: none;
+}
+
+.left.carousel-control {
+    background-image: none;
+}
+
+.item {
+    background-color: pink;
+    opacity: 0.7;
+}
+
+
+
 
 /* 
     ************************************************************************
@@ -51,6 +67,9 @@ img {
 
 /* FOR PORTRAIT ONLY */
 @media screen and (orientation: portrait) {
+    /*.carousel-slide {
+        padding-bottom: 1.5em;
+    }*/
 }
 
 /* FOR LANDSCAPE ONLY */
