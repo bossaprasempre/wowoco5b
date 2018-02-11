@@ -1,0 +1,82 @@
+﻿@page
+@model FormModel
+@{
+    ViewBag.PageTitle = "Form";
+    ViewBag.theme = "birthday";
+    ViewBag.meta_title ="";
+    ViewBag.meta_keywords ="";
+    ViewBag.meta_description ="";
+
+}
+
+<div class="container">
+    <form action="Preview" method="post">
+
+        <div class="form-group">
+            <label for="inputFriendName" class="">Friend's Name: </label>
+            <div class="">
+                <input type="text" class="form-control" placeholder="Enter your Friend's Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputFriendEmail" class="">Friend's Email: </label>
+            <div>
+                <input type="text" class="form-control" placeholder="Enter your Friend's Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSubject" class="">Subject: </label>
+            <div>
+                <input type="text" class="form-control" placeholder="Enter the Subject">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTextarea" class="">Message: </label>
+            <textarea name="" class="form-control" maxlength="240" placeholder="" Enter Your Message""></textarea>
+            <div class="countdown"></div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="inputSenderName" class="">Sender's Name: </label>
+            <div class="">
+                <input type="text" class="form-control" placeholder="Enter Sender's Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSenderEmail" class="">Sender's Email: </label>
+            <div>
+                <input type="text" class="form-control" placeholder="Enter Sender's Email">
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="g-recaptcha" data-sitekey="6LfGvS8UAAAAAFFvlmvFGnJMMWAp3g2Vg_TzhCKg"></div>
+
+            <div class="form-group">
+                <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+    @section Scripts {
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+        <script src="~/lib/textarea-countdown.js"></script>
+
+        <!--BEGIN: TEXT AUTOSIZE-->
+        <script src="~/lib/textarea-autosize/dist/jquery.textarea_autosize.js"></script>
+        <script>
+            $('textarea').textareaAutoSize();
+        </script>
+        <!--END: TEXT AUTOSIZE-->
+
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    }
+
+
+</div>

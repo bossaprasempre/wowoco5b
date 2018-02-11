@@ -2,7 +2,7 @@ body {
     font-family:;
     font-size: 14px;
     color:;
-    text-align: center;
+    /*text-align: center;*/
     /*margin: auto;*/
 }
 
@@ -30,6 +30,11 @@ h1 {
     padding: 1em;
 }
 
+#form-border {
+    border-color: blueviolet;
+    border-style: dotted;
+}
+
 /* TO GET RID OFF THE SIDE CONTROL BACKGROUND (GRADIENT)*/
 .right.carousel-control {
     background-image: none;
@@ -43,7 +48,6 @@ h1 {
     background-color: pink;
     opacity: 0.7;
 }
-
 
 
 
