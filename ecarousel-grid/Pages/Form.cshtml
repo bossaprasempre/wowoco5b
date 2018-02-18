@@ -1,5 +1,7 @@
-﻿@page
-@model FormModel
+﻿
+@page
+@model ecarouselGrid.Model.Greetings;
+
 @{
     ViewBag.PageTitle = "Form";
     ViewBag.theme = "birthday";
@@ -13,47 +15,47 @@
     <form action="Preview" method="post">
 
         <div class="form-group">
-            <label for="inputFriendName" class="">Friend's Name: </label>
-            <div class="">
-                <input type="text" class="form-control" placeholder="Enter your Friend's Name">
-            </div>
+            <label asp-for="@Model.inputFriendName"></label>
+            <input asp-for="@Model.inputFriendName" type="text" class="form-control">
+            <span asp-validation-for="@Model.inputFriendName" class="text-danger"></span>
         </div>
+
         <div class="form-group">
-            <label for="inputFriendEmail" class="">Friend's Email: </label>
-            <div>
-                <input type="text" class="form-control" placeholder="Enter your Friend's Email">
-            </div>
+            <label asp-for="@Model.inputFriendEmail"></label>
+            <input asp-for="@Model.inputFriendEmail" type="text" class="form-control">
+            <span asp-validation-for="@Model.inputFriendEmail" class="text-danger"></span>
         </div>
+
         <div class="form-group">
-            <label for="inputSubject" class="">Subject: </label>
-            <div>
-                <input type="text" class="form-control" placeholder="Enter the Subject">
-            </div>
+            <label asp-for="@Model.inputSubject"></label>
+            <input asp-for="@Model.inputSubject" type="text" class="form-control">
+            <span asp-validation-for="@Model.inputSubject" class="text-danger"></span>
         </div>
+
         <div class="form-group">
-            <label for="inputTextarea" class="">Message: </label>
-            <textarea name="" class="form-control" maxlength="240" placeholder="" Enter Your Message""></textarea>
+            <label asp-for="@Model.inputTextarea"> </label>
+            <textarea asp-for="@Model.inputTextarea" class="form-control" maxlength="240"></textarea>
+            <span asp-validation-for="@Model.inputTextarea" class="text-danger"></span>
             <div class="countdown"></div>
-
         </div>
 
         <div class="form-group">
-            <label for="inputSenderName" class="">Sender's Name: </label>
-            <div class="">
-                <input type="text" class="form-control" placeholder="Enter Sender's Name">
-            </div>
+            <label asp-for="@Model.inputSenderName"></label>
+            <input asp-for="@Model.inputSenderName" type="text" class="form-control">
+            <span asp-validation-for="@Model.inputSenderName" class="text-danger"></span>
         </div>
+
         <div class="form-group">
-            <label for="inputSenderEmail" class="">Sender's Email: </label>
-            <div>
-                <input type="text" class="form-control" placeholder="Enter Sender's Email">
-            </div>
+            <label asp-for="@Model.inputSenderEmail"></label>
+            <input asp-for="@Model.inputSenderEmail" type="text" class="form-control" />
+            <span asp-validation-for="@Model.inputSenderEmail" class="text-danger"></span>
         </div>
 
 
-
+        <!-- RECAPTCHA BEGIN -->
         <div>
             <div class="g-recaptcha" data-sitekey="6LfGvS8UAAAAAFFvlmvFGnJMMWAp3g2Vg_TzhCKg"></div>
+            <!-- RECAPTCHA END -->
 
             <div class="form-group">
                 <button type="submit" value="Submit" class="btn btn-primary">Submit</button>

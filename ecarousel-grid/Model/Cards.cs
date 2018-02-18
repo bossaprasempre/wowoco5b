@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ecarousel-grid.Model
+namespace ecarouselGrid.Model
 {
     public class Cards
     {
