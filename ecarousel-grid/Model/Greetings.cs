@@ -10,7 +10,7 @@ namespace ecarouselGrid.Model
     public class Greetings //Name of the Model; collection of all the greetings users create
     {
         [Key]
-        public int? ID { get; set; }
+        public int ID { get; set; }
 
         [DisplayName("Friend's Name")]
         [Display(Prompt = "Friend's Name")]

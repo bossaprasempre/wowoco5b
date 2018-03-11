@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ecarouselGrid.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +24,10 @@ namespace ecarousel_grid
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            // WOWOCO: Let MVC services know about my database
+            //services.AddDbContext<Enter-DB-Bridge-Class>(options => options.UseSqlite(Configuration["Enter-DB-Name"]));
+            services.AddDbContext<DbBridge>(options => options.UseSqlite(Configuration["MyDB"])); //connects to appsettings.json
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +46,21 @@ namespace ecarousel_grid
             app.UseStaticFiles();
 
             app.UseMvc();
+
+
+            //WOWOCO: Codeblock to auto-create the database when needed
+            //Copy and Paste As-Is, Except for .GetServices<Database-Class-Name>
+            using (var serviceScope = app
+                .ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                serviceScope
+                    .ServiceProvider
+                    .GetService<DbBridge>()
+                    .Database
+                    .EnsureCreated();
+            }
         }
     }
 }
